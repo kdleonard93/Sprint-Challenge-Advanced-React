@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { useLocalStorage } from "./hooks/UseLocalStorage";
+import { usePlayers } from "./hooks/Players";
 
-function App() {
+function App(props) {
+  const [name, setName] = usePlayers("name", "kyle");
+  const [country, setCountry] = usePlayers("country", "United States");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{"Women's World Cup"}</h1>
+      <input
+        type="string"
+        placeholder="Name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+      <input
+        type="string"
+        placeholder="Country"
+        value={country}
+        onChange={e => setCountry(e.target.value)}
+      />
     </div>
   );
 }
