@@ -9,7 +9,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <h1>Olympics</h1>
+      <h1>{"Women's World Cup"}</h1>
       <input
         type="string"
         placeholder="Name"
