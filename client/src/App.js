@@ -9,6 +9,19 @@ function App(props) {
     <div className="App">
       <h1>Olympics</h1>
     </div>
+
+<input
+type="string"
+placeholder="Name"
+value={name}
+onChange={e => setName(e.target.value)}
+/>
+<input
+type="string"
+placeholder="Country"
+value={country}
+onChange={e => setCountry(e.target.value)}
+/>
   );
 }
 

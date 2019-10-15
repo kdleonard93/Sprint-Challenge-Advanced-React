@@ -1,6 +1,6 @@
 import React from "react";
 
-const Players = props => {
+const usePlayers = props => {
   return (
     <div>
       <h2>Name: {props.player.name}</h2>
@@ -10,4 +10,4 @@ const Players = props => {
   );
 };
 
-export default Players;
+export default usePlayers;
