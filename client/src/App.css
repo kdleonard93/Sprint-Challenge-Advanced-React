@@ -19,6 +19,11 @@
   color: white;
 }
 
+.dark-mode {
+  color: goldenrod;
+  background-color: rgba(15, 15, 211, 0.8);
+}
+
 .App-link {
   color: #61dafb;
 }
