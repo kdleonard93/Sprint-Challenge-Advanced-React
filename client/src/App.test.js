@@ -14,16 +14,6 @@ it("renders without crashing", () => {
   rtl.cleanup;
 });
 
-it("contains player data", () => {
-  const name = rtl.render(<h2>Player Data</h2>);
-  console.log(name.debug());
-  //  const playerInfo = wrapper.queryAllByText(/player info/i)
-  //  expect(playerInfo).toBeInTheDocument();
-  const element = name.queryByText(/player data/i);
-  expect(element).toBeInTheDocument();
-  rtl.cleanup;
-});
-
 it("contains dark mode button", () => {
   const wrapper = rtl.render(<App />);
   console.log(wrapper.debug());
