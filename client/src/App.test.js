@@ -1,9 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import * as rtl from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import App from "./App";
+import Player from "./components/Player";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it("renders without crashing", () => {
+  const title = rtl.render(<h1>Women's World Cup Soccer</h1>);
+  console.log(title.debug());
+  const element = title.queryByText(/women's world cup soccer/i);
+  expect(element).toBeTruthy();
+  expect(element).toBeVisible();
+  expect(element).toBeInTheDocument();
+  rtl.cleanup;
+});
+
+it("contains dark mode button", () => {
+  const wrapper = rtl.render(<App />);
+  console.log(wrapper.debug());
+  const dark = wrapper.queryByText(/use dark mode/i);
+  expect(dark).toBeInTheDocument();
+  expect(dark).toBeVisible();
+  rtl.cleanup;
+});
+it("contains a player name", () => {
+  const wrapper = rtl.render(<App />);
+  const playerName = wrapper.queryByText(/player name: [.*?]/i);
+  expect(playerName).toBeInTheDocument;
+  rtl.cleanup;
 });
